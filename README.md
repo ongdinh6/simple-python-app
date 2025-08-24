@@ -43,6 +43,35 @@ curl "http://127.0.0.1:8000/greet?name=Alice"
 # Response: {"message":"Hello, Alice!"}
 ```
 
+## Docker
+
+You can also run this application using Docker.
+
+### Build the Docker image
+
+```sh
+docker build -t simple-python-app .
+```
+
+### Run the Docker container locally
+
+```sh
+docker run -d -p 8000:8000 --name simple-python-app simple-python-app
+```
+
+The API will be available at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+## FastAPI Documentation
+
+Once the server is running, FastAPI automatically generates interactive API documentation:
+
+- **Swagger UI:**  
+    [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+- **ReDoc:**  
+    [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+These interfaces allow you to explore and test the API endpoints directly from your browser.
 
 ## Bonus: Setting Up Python on Windows with Ubuntu (WSL)
 

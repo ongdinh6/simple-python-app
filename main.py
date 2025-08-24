@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
+from models.user import User
 
 app = FastAPI()
 
@@ -10,3 +11,7 @@ def greet(name: str = Query(..., description="Your name")):
 @app.get("/health")
 def health():
     return JSONResponse(content={"status": "OK"})
+
+@app.post("/users/")
+def create_user(user: User):
+    return JSONResponse(content={ "user": user.dict() })
